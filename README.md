@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/banner.svg" alt="Tariful Hoque: Machine Learning, Explainable AI, Data Analysis" width="100%">
+  <img src="banner.svg" alt="Tariful Hoque: Machine Learning, Explainable AI, Data Analysis" width="100%">
 </p>
 
 <p align="center">
@@ -12,7 +12,7 @@
   <a href="mailto:tarifulhoque347@gmail.com"><b>Email</b></a>
 </p>
 
-<img src="assets/divider.svg" alt="" width="100%">
+<img src="divider.svg" alt="" width="100%">
 
 ## About
 
@@ -22,32 +22,34 @@ Alongside the technical side, I work with UI/UX (Figma), digital marketing and A
 
 I'm looking for an AI/ML-focused role where I can keep learning and apply these skills to real-world problems.
 
-<img src="assets/divider.svg" alt="" width="100%">
+<img src="divider.svg" alt="" width="100%">
 
 ## Skills
 
-<img src="assets/skills.svg" alt="Skills: Machine Learning Fundamentals, Explainable AI, Data Analysis and Visualization, SQL, MS Excel, Problem-Solving, Critical Thinking, AI-Assisted Content Creation, Advertisement and Campaign Concepts, Figma, UI/UX Design, Digital Communication" width="100%">
+<img src="skills.svg" alt="Skills: Machine Learning Fundamentals, Explainable AI, Data Analysis and Visualization, SQL, MS Excel, Problem-Solving, Critical Thinking, AI-Assisted Content Creation, Advertisement and Campaign Concepts, Figma, UI/UX Design, Digital Communication" width="100%">
 
-<img src="assets/divider.svg" alt="" width="100%">
+<img src="divider.svg" alt="" width="100%">
 
-## Featured work
+## Featured Work
 
-<img src="assets/featured.svg" alt="Featured work: Air Quality Prediction Using ML and AI, EcoBin 2.0, AI-Powered Short Advertisement Creation" width="100%">
+<img src="featured.svg" alt="Featured work: Air Quality Prediction Using ML and AI, EcoBin 2.0, AI-Powered Short Advertisement Creation" width="100%">
 
 <!-- When a repository is ready, add a plain link list under the image, for example:
+
 - [Air Quality Prediction Using ML & AI](https://github.com/Majortarif/REPO-NAME)
-Then change "coming soon" in assets/featured.svg for that card. -->
 
-<img src="assets/divider.svg" alt="" width="100%">
+Then change "coming soon" in featured.svg for that card. -->
 
-## Currently exploring
+<img src="divider.svg" alt="" width="100%">
 
-- Explainable AI techniques for interpreting model predictions
-- End-to-end machine learning workflows, from data understanding to evaluation
-- Data analysis and visualization
+## Currently Exploring
 
-## How this GitHub is organized
+* Explainable AI techniques for interpreting model predictions
+* End-to-end machine learning workflows, from data understanding to evaluation
+* Data analysis and visualization
+
+## How This GitHub Is Organized
 
 Repositories use lowercase, hyphenated names, and each one has a README covering the problem, the approach and how to run it. University work, personal projects and applied AI/ML projects are being added gradually and labeled with topics.
 
-<img src="assets/footer.svg" alt="" width="100%">
+<img src="footer.svg" alt="" width="100%">

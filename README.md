@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="banner.svg" alt="Tariful Hoque: Machine Learning, Explainable AI, Data Analysis" width="100%">
+  <img src="assets/banner.svg" alt="Tariful Hoque: Machine Learning, Explainable AI, Data Analysis" width="100%">
 </p>
 
 <p align="center">
@@ -7,56 +7,47 @@
 </p>
 
 <p align="center">
-  <a href="https://tarifulhoqueportfoloi.netlify.app/">Portfolio</a> ·
-  <a href="https://www.linkedin.com/in/tariful-hoque-582321259">LinkedIn</a> ·
-  <a href="mailto:tarifulhoque347@gmail.com">Email</a>
+  <a href="https://tarifulhoqueportfoloi.netlify.app/"><b>Portfolio</b></a> &nbsp;·&nbsp;
+  <a href="https://www.linkedin.com/in/tariful-hoque-582321259"><b>LinkedIn</b></a> &nbsp;·&nbsp;
+  <a href="mailto:tarifulhoque347@gmail.com"><b>Email</b></a>
 </p>
 
----
+<img src="assets/divider.svg" alt="" width="100%">
 
 ## About
 
-I'm a Computer Science and Engineering graduate from East West University, Dhaka. I like working through a problem end to end: understanding the data, building a model, and interpreting what the results actually mean.
-
-Explainable AI is a recurring theme in my work, especially making model predictions understandable to people who are not machine learning specialists.
+I'm a Computer Science and Engineering graduate from East West University, Dhaka. I like working through a problem end to end: understanding the data, building a model, and interpreting what the results actually mean. Explainable AI is a recurring theme in my work, especially making model predictions understandable to people who are not machine learning specialists.
 
 Alongside the technical side, I work with UI/UX (Figma), digital marketing and AI-assisted content creation.
 
 I'm looking for an AI/ML-focused role where I can keep learning and apply these skills to real-world problems.
 
-## Focus Areas
+<img src="assets/divider.svg" alt="" width="100%">
 
-| Area                     | What it covers                                                |
-| ------------------------ | ------------------------------------------------------------- |
-| **Machine Learning**     | Data preparation, model training and evaluation               |
-| **Explainable AI (XAI)** | Interpreting predictions and quantifying feature-level impact |
-| **Data Analysis**        | SQL, MS Excel, data visualization                             |
-| **Design & Content**     | Figma, UI/UX, AI-assisted content creation                    |
+## Skills
 
-## Featured Work
+<img src="assets/skills.svg" alt="Skills: Machine Learning Fundamentals, Explainable AI, Data Analysis and Visualization, SQL, MS Excel, Problem-Solving, Critical Thinking, AI-Assisted Content Creation, Advertisement and Campaign Concepts, Figma, UI/UX Design, Digital Communication" width="100%">
 
-| Project                                                | Focus                                                                                                        | Repository  |
-| ------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ | ----------- |
-| **Air Quality Prediction Using Machine Learning & AI** | Predicts air quality from 8 environmental parameters and uses XAI to explain which factors drive the outcome | Coming soon |
-| **EcoBin 2.0: AI-Powered Smart Waste Bin**             | AI-powered smart waste management concept, from problem definition to prototype design                       | Coming soon |
-| **AI-Powered Short Advertisement Creation**            | Short-form ad concepts produced with generative content tools                                                | Coming soon |
+<img src="assets/divider.svg" alt="" width="100%">
 
-<!-- Replace "Coming soon" with the repository link once each project is uploaded. -->
+## Featured work
 
-## Currently Exploring
+<img src="assets/featured.svg" alt="Featured work: Air Quality Prediction Using ML and AI, EcoBin 2.0, AI-Powered Short Advertisement Creation" width="100%">
 
-* Explainable AI techniques for interpreting model predictions
-* End-to-end machine learning workflows, from data understanding to evaluation
-* Data analysis and visualization
+<!-- When a repository is ready, add a plain link list under the image, for example:
+- [Air Quality Prediction Using ML & AI](https://github.com/Majortarif/REPO-NAME)
+Then change "coming soon" in assets/featured.svg for that card. -->
 
-## How This GitHub Is Organized
+<img src="assets/divider.svg" alt="" width="100%">
 
-Repositories use lowercase, hyphenated names, and each one has a README covering the problem, the approach and how to run it.
+## Currently exploring
 
-University work, personal projects and applied AI/ML projects are being added gradually and labeled with topics.
+- Explainable AI techniques for interpreting model predictions
+- End-to-end machine learning workflows, from data understanding to evaluation
+- Data analysis and visualization
 
----
+## How this GitHub is organized
 
-Open to conversations about AI/ML, data and Explainable AI.
+Repositories use lowercase, hyphenated names, and each one has a README covering the problem, the approach and how to run it. University work, personal projects and applied AI/ML projects are being added gradually and labeled with topics.
 
-The best way to reach me is through my [Portfolio](https://tarifulhoqueportfoloi.netlify.app/) or [LinkedIn](https://www.linkedin.com/in/tariful-hoque-582321259).
+<img src="assets/footer.svg" alt="" width="100%">

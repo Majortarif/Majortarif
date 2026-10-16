@@ -73,6 +73,14 @@ My capstone predicted air quality from eight environmental parameters and used *
   <a href="https://github.com/Majortarif/docusense-rag/actions/workflows/ci.yml"><img src="https://github.com/Majortarif/docusense-rag/actions/workflows/ci.yml/badge.svg" alt="CI status" align="center"></a>
 </p>
 
+<a href="https://github.com/Majortarif/AgriCycle">
+  <img src="assets/project-agricycle.svg" width="100%" alt="AgriCycle: offline-first Bangla PWA for smallholder farmers with a farmer–buyer marketplace, crop-waste recycling matcher, green rewards and a Bangla farming advisor.">
+</a>
+<p align="center">
+  <a href="https://github.com/Majortarif/AgriCycle"><b>Source ↗</b></a> &nbsp;·&nbsp;
+  <a href="https://github.com/Majortarif/AgriCycle#-screenshots"><b>Screenshots ↗</b></a>
+</p>
+
 <a href="https://majortarif.github.io/CareerPilot-AI-AI-Powered-Career-Skill-Intelligence-Platform/">
   <img src="assets/project-careerpilot.svg" width="100%" alt="CareerPilot AI: career and skill intelligence prototype with CV and job analysis, skill gaps, a 12-week roadmap and an application tracker.">
 </a>

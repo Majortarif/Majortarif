@@ -688,10 +688,12 @@ def project(slug, idx, kicker, title, summary, points, tags, media_right, media,
     write(f"project-{slug}.svg", svg(W, H, alt, "".join(b), "".join(css), defs))
 
 
-def shot_media(name, url, live):
+def shot_media(name, url, live, path=None):
+    """Screenshot slot; reads the portfolio's project image unless an explicit path is given."""
     def media(x, y, w, h):
         frame, cy = media_frame(x, y, w, h, url, live)
-        return frame + screenshot(x, cy, w, h - 36, PORTFOLIO / "assets/img/projects" / f"{name}.webp", name), ""
+        src = path or PORTFOLIO / "assets/img/projects" / f"{name}.webp"
+        return frame + screenshot(x, cy, w, h - 36, src, name), ""
     return media
 
 
@@ -775,43 +777,51 @@ def projects():
         "DocuSense RAG: a FastAPI service that answers only from internal documentation (FAISS retrieval, Claude or extractive answers, guardrails, 106 tests, Docker CI).",
     )
     project(
-        "careerpilot", "02", "Career intelligence · Frontend prototype · 2026", "CareerPilot AI",
+        "agricycle", "02", "AgriTech · Offline Bangla PWA · CSE495", "AgriCycle",
+        "A mobile-first app for smallholder farmers in Bangladesh: sell without middlemen, earn from crop waste, get rewarded for green farming.",
+        ["Farmer–buyer market, waste matcher, green rewards", "Bangla advisor with voice, offline PWA, 64 districts"],
+        ["JavaScript", "PWA", "Chart.js", "Web Speech API"],
+        True, shot_media("agricycle", "github.com/Majortarif/AgriCycle", False, Path(__file__).parent / "shots" / "agricycle.webp"),
+        "AgriCycle: offline-first Bangla PWA for smallholder farmers with a farmer–buyer marketplace, crop-waste recycling matcher, green rewards and a Bangla farming advisor.",
+    )
+    project(
+        "careerpilot", "03", "Career intelligence · Frontend prototype · 2026", "CareerPilot AI",
         "A career and skill workspace: analyse a CV and job descriptions, see skill gaps, follow a 12-week roadmap and track applications.",
         ["Required vs. preferred skill detection, gap scoring", "Rule-based AI, deterministic and labelled as simulated"],
         ["JavaScript", "Tailwind CSS", "Chart.js", "LocalStorage"],
-        True, shot_media("careerpilot", "majortarif.github.io/CareerPilot-AI", True),
+        False, shot_media("careerpilot", "majortarif.github.io/CareerPilot-AI", True),
         "CareerPilot AI: career and skill intelligence prototype with CV and job analysis, skill gaps, a 12-week roadmap and an application tracker.",
     )
     project(
-        "ecobin", "03", "Smart waste management · Concept + dashboard", "EcoBin 2.0",
+        "ecobin", "04", "Smart waste management · Concept + dashboard", "EcoBin 2.0",
         "An AI-powered smart waste bin concept I led from problem definition to prototype, with an operations dashboard for bins and routes.",
         ["48 simulated bins: fill level, battery, waste type", "Collection routes with a rule-based route optimizer"],
         ["Product design", "JavaScript", "Tailwind CSS", "Cloudflare"],
-        False, shot_media("ecobin", "icy-leaf-c41a.tariful-ewu.workers.dev", True),
+        True, shot_media("ecobin", "icy-leaf-c41a.tariful-ewu.workers.dev", True),
         "EcoBin 2.0: smart waste bin concept and operations dashboard with 48 simulated bins, waste analytics and route optimization.",
     )
     project(
-        "pulse", "04", "Productivity · Task & habit tracker · 2026", "Pulse",
+        "pulse", "05", "Productivity · Task & habit tracker · 2026", "Pulse",
         "An AI-assisted task and habit tracker: organise tasks, build streaks, read your own analytics and ask a coach what to do next.",
         ["Habit streaks calculated from real completion dates", "Rule-based AI Coach that answers from your own data"],
         ["JavaScript", "Tailwind CSS", "LocalStorage", "Netlify"],
-        True, shot_media("pulse", "ai-task-habit-tracker.netlify.app", True),
+        False, shot_media("pulse", "ai-task-habit-tracker.netlify.app", True),
         "Pulse: task and habit tracker with streaks, productivity analytics and a rule-based AI coach.",
     )
     project(
-        "phonebook", "05", "C · Console application · 2022 → 2026", "Digital Phonebook",
+        "phonebook", "06", "C · Console application · 2022 → 2026", "Digital Phonebook",
         "My 2022 C console project, rebuilt in 2026 with proper fixes and a colourised UI.",
         ["CRUD, search across six fields, blocking, favourites", "Statistics and export to a readable text file"],
         ["C", "File I/O", "Code::Blocks", "MinGW GCC"],
-        False, phonebook_media,
+        True, phonebook_media,
         "Digital Phonebook 2026: C console app with contact CRUD, search, blocking, favourites, statistics and export.",
     )
     project(
-        "ai-ads", "06", "Generative AI · Digital marketing", "AI-Powered Short Ads",
+        "ai-ads", "07", "Generative AI · Digital marketing", "AI-Powered Short Ads",
         "Short-form promotional ads and creative ad concepts made with AI-based generative content tools.",
         ["How AI-assisted workflows make advertising faster", "From creative concept to finished short-form ad"],
         ["Generative AI", "Advertising", "Creative content"],
-        True, ads_media,
+        False, ads_media,
         "AI-Powered Short Advertisement Creation: creative ad concepts turned into short-form promotional ads with generative AI tools.",
     )
 

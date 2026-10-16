@@ -192,6 +192,37 @@ def hero():
     b.append('<ellipse class="breathe" cx="930" cy="140" rx="440" ry="300" fill="url(#glowA)"/>')
     b.append('<ellipse class="breathe" style="animation-delay:-4.5s" cx="170" cy="470" rx="440" ry="250" fill="url(#glowB)"/>')
 
+    # ultrasonic sonar behind the network: rings ping outwards while a radar beam turns
+    sx, sy, R = 955, 215, 300
+    css += f"""
+.sonar{{animation:sonar 4.8s cubic-bezier(.2,.6,.3,1) infinite;transform-box:fill-box;transform-origin:center}}
+@keyframes sonar{{0%{{transform:scale(.1);opacity:0}}10%{{opacity:.6}}100%{{transform:scale(1);opacity:0}}}}
+.beam{{animation:beam 7s linear infinite;transform-origin:{sx}px {sy}px}}@keyframes beam{{to{{transform:rotate(360deg)}}}}
+.scan{{animation:scan 7.5s linear infinite}}@keyframes scan{{from{{transform:translateY(-60px)}}to{{transform:translateY({H + 60}px)}}}}
+"""
+    a = math.radians(-48)
+    ex, ey = sx + R * math.cos(a), sy + R * math.sin(a)
+    defs += (
+        f'<linearGradient id="beamG" gradientUnits="userSpaceOnUse" x1="{sx + 160}" y1="{sy}" '
+        f'x2="{sx + 160 * math.cos(a):.0f}" y2="{sy + 160 * math.sin(a):.0f}">'
+        f'<stop offset="0" stop-color="{D["acc"]}" stop-opacity=".26"/><stop offset="1" stop-color="{D["acc"]}" stop-opacity="0"/></linearGradient>'
+        f'<linearGradient id="scanG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="{D["acc"]}" stop-opacity="0"/>'
+        f'<stop offset=".85" stop-color="{D["acc"]}" stop-opacity=".07"/><stop offset="1" stop-color="{D["acc"]}" stop-opacity=".22"/></linearGradient>'
+    )
+    sonar = [f'<g opacity=".9">']
+    for r in (75, 150, 225, 300):
+        sonar.append(f'<circle cx="{sx}" cy="{sy}" r="{r}" fill="none" stroke="#94aad2" stroke-opacity=".08" stroke-dasharray="2 6"/>')
+    sonar.append(f'<path d="M{sx - R} {sy}H{sx + R}M{sx} {sy - R}V{sy + R}" stroke="#94aad2" stroke-opacity=".07"/>')
+    for k in range(3):
+        sonar.append(f'<circle class="sonar" style="animation-delay:{-k * 1.6:.1f}s" cx="{sx}" cy="{sy}" r="{R}" fill="none" stroke="{D["acc"]}" stroke-width="1.4"/>')
+    sonar.append(
+        f'<g class="beam"><path d="M{sx} {sy}L{sx + R} {sy}A{R} {R} 0 0 0 {ex:.0f} {ey:.0f}Z" fill="url(#beamG)"/>'
+        f'<path d="M{sx} {sy}H{sx + R}" stroke="{D["acc"]}" stroke-opacity=".55" stroke-width="1.5"/></g>'
+    )
+    sonar.append(f'<circle cx="{sx}" cy="{sy}" r="4" fill="{D["acc"]}"/><circle class="ping" cx="{sx}" cy="{sy}" r="4" fill="{D["acc"]}"/></g>')
+    b.append("".join(sonar))
+    b.append(f'<g class="scan"><rect y="0" width="{W}" height="60" fill="url(#scanG)"/><path d="M0 60H{W}" stroke="{D["acc"]}" stroke-opacity=".3"/></g>')
+
     # drifting dust; two copies side by side make the loop seamless
     dust = []
     for _ in range(70):
@@ -931,6 +962,149 @@ def experience():
     write("experience.svg", svg(W, H, label, "".join(b), "".join(css), defs))
 
 
+# ================================================================ ultrasonic extras
+def wave_divider():
+    """Section divider: three phase-shifting ultrasonic waves and a travelling signal packet."""
+    W, H = 1200, 72
+    mid = H / 2
+    layers = [  # wavelength, amplitude, colour, opacity, stroke width, seconds per wavelength
+        (300, 15, D["acc2"], 0.5, 1.6, 9),
+        (150, 9, D["acc"], 0.8, 1.8, 4.5),
+        (40, 4, D["acc"], 0.45, 1.1, 1.6),
+    ]
+    defs = (
+        '<linearGradient id="fade" x1="0" x2="1"><stop offset="0" stop-color="#fff" stop-opacity="0"/>'
+        '<stop offset=".2" stop-color="#fff"/><stop offset=".8" stop-color="#fff"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>'
+        f'<mask id="m" maskUnits="userSpaceOnUse" x="0" y="0" width="{W}" height="{H}"><rect width="{W}" height="{H}" fill="url(#fade)"/></mask>'
+        f'<radialGradient id="pulse"><stop offset="0" stop-color="{D["acc"]}" stop-opacity=".9"/><stop offset="1" stop-color="{D["acc"]}" stop-opacity="0"/></radialGradient>'
+    )
+    css, b = [], []
+    for k, (lam, amp, col, op, sw, sec) in enumerate(layers):
+        step = 4 if lam < 100 else 8
+        pts = [f"{x},{mid + amp * math.sin(2 * math.pi * x / lam):.1f}" for x in range(0, W + lam + 1, step)]
+        css.append(f".w{k}{{animation:w{k} {sec}s linear infinite}}@keyframes w{k}{{to{{transform:translateX(-{lam}px)}}}}")
+        b.append(f'<path class="w{k}" d="M{pts[0]}L{" ".join(pts[1:])}" fill="none" stroke="{col}" stroke-opacity="{op}" stroke-width="{sw}" stroke-linecap="round"/>')
+    css.append(f".pk{{animation:pk 3.8s linear infinite}}@keyframes pk{{from{{transform:translateX(-90px)}}to{{transform:translateX({W + 90}px)}}}}")
+    b.append(f'<g class="pk"><ellipse cx="0" cy="{mid}" rx="70" ry="16" fill="url(#pulse)" opacity=".5"/><circle cx="0" cy="{mid}" r="3" fill="#fff"/></g>')
+    write("divider-wave.svg", svg(W, H, "Animated ultrasonic wave divider", f'<g mask="url(#m)">{"".join(b)}</g>', "".join(css), defs))
+
+
+TICKER = ["Machine Learning", "Explainable AI", "Python", "FastAPI", "RAG", "FAISS", "Claude API",
+          "Data Analysis", "Data Visualization", "JavaScript", "PWA", "Chart.js", "Figma", "UI/UX", "Docker", "GitHub Actions"]
+
+
+def ticker():
+    """An endless, edge-faded ribbon of the stack, with a pinging SCAN badge."""
+    W, H, fs, cw, gap = 1200, 60, 14, 0.66, 46
+    y = H / 2 + fs * 0.36
+    row, x = [], 0.0
+    for t in TICKER:
+        s = t.upper()
+        row.append(mono(x, y, s, fs, D["text2"], cw=cw))
+        x += mono_w(s, fs, cw) + gap
+        dx = x - gap / 2
+        row.append(f'<path d="M{dx:.1f} {H / 2 - 5}l5 5-5 5-5-5z" fill="{D["acc"]}" opacity=".85"/>')
+    seq = x
+    row = "".join(row)
+    css = [
+        f".tk{{animation:tk {seq / 48:.1f}s linear infinite}}@keyframes tk{{to{{transform:translateX(-{seq:.1f}px)}}}}",
+        ".ping{animation:ping 2s cubic-bezier(0,0,.2,1) infinite;transform-box:fill-box;transform-origin:center}",
+        "@keyframes ping{0%{transform:scale(1);opacity:.8}80%,100%{transform:scale(3);opacity:0}}",
+    ]
+    defs = (
+        f'<clipPath id="c"><rect x="1" y="1" width="{W - 2}" height="{H - 2}" rx="{H / 2 - 1}"/></clipPath>'
+        '<linearGradient id="edge" x1="0" x2="1"><stop offset="0" stop-color="#fff" stop-opacity="0"/>'
+        '<stop offset=".2" stop-color="#fff"/><stop offset=".93" stop-color="#fff"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>'
+        f'<mask id="m" maskUnits="userSpaceOnUse" x="0" y="0" width="{W}" height="{H}"><rect width="{W}" height="{H}" fill="url(#edge)"/></mask>'
+    )
+    badge_w = 128
+    b = [
+        f'<rect x=".5" y=".5" width="{W - 1}" height="{H - 1}" rx="{H / 2}" fill="{D["elev"]}" stroke="{D["line2"]}"/>',
+        f'<g clip-path="url(#c)"><g mask="url(#m)"><g transform="translate({badge_w + 30} 0)"><g class="tk"><g>{row}</g><g transform="translate({seq:.1f} 0)">{row}</g></g></g></g></g>',
+        f'<rect x="8" y="8" width="{badge_w}" height="{H - 16}" rx="{(H - 16) / 2}" fill="{D["elev2"]}" stroke="{D["acc"]}" stroke-opacity=".45"/>',
+        f'<circle cx="30" cy="{H / 2}" r="4" fill="{D["ok"]}"/><circle class="ping" cx="30" cy="{H / 2}" r="4" fill="{D["ok"]}"/>',
+        mono(44, y - 0.5, "NOW SCANNING", 11.5, D["acc"], cw=0.62),
+    ]
+    write("ticker.svg", svg(W, H, "Stack: " + ", ".join(TICKER) + ".", "".join(b), "".join(css), defs))
+
+
+def status_card():
+    """A terminal that types who I am, next to a radar that sweeps across my core skills."""
+    W, H = 1200, 330
+    T = 6.0  # radar revolution, seconds
+    b = [card(W, H)]
+    fx, fy, fw, fh = 24, 24, 760, 282
+    frame, cy = media_frame(fx, fy, fw, fh, "", False)
+    tt = "zsh  —  tariful@dhaka"
+    b.append(frame + mono(fx + fw / 2 - mono_w(tt, 12) / 2, fy + 22, tt, 12, D["text3"]))
+    t1, t2, t3, ok, a1, a2 = D["text"], D["text2"], D["text3"], D["ok"], D["acc"], D["acc2"]
+
+    def prompt(cmd):
+        return [("tariful@dhaka", ok), (":", t3), ("~", a2), ("$ ", t3), (cmd, t1)]
+
+    lines = [
+        prompt("whoami"),
+        [("  Tariful Hoque  ·  CSE graduate, East West University", t2)],
+        prompt("cat focus.txt"),
+        [("  machine learning · explainable AI · grounded LLMs · UI/UX", t2)],
+        prompt("ls ~/shipped"),
+        [("  docusense-rag/  agricycle/  careerpilot-ai/  ecobin/  pulse/", a1)],
+        prompt("./status --live"),
+        [("  ● open to AI/ML roles    ● building in public    ● UTC+6", ok)],
+    ]
+    body, tcss, (lx, ly) = terminal(fx + 24, cy + 34, fw - 48, lines, "s", cycle=15.0, fs=13, lh=26)
+    b.append(body)
+    b.append(f'<rect class="blink" x="{fx + 24}" y="{ly + 26 - 12:.0f}" width="8" height="16" fill="{a1}"/>')
+
+    # radar
+    rx, ry, R = 994, 160, 118
+    a = math.radians(-50)
+    css = [
+        tcss,
+        ".blink{animation:blink 1.05s steps(1) infinite}@keyframes blink{50%{opacity:0}}",
+        f".sweep{{animation:sweep {T}s linear infinite;transform-origin:{rx}px {ry}px}}@keyframes sweep{{to{{transform:rotate(360deg)}}}}",
+        f".blip{{opacity:.22;animation:blip {T}s ease-out infinite}}",
+        "@keyframes blip{0%{opacity:1}35%,100%{opacity:.22}}",
+        f".ring{{animation:ring {T / 2}s cubic-bezier(.2,.6,.3,1) infinite;transform-box:fill-box;transform-origin:center}}",
+        "@keyframes ring{0%{transform:scale(.1);opacity:0}15%{opacity:.5}100%{transform:scale(1);opacity:0}}",
+    ]
+    defs = (
+        f'<linearGradient id="beam" gradientUnits="userSpaceOnUse" x1="{rx + 70}" y1="{ry}" x2="{rx + 70 * math.cos(a):.0f}" y2="{ry + 70 * math.sin(a):.0f}">'
+        f'<stop offset="0" stop-color="{a1}" stop-opacity=".38"/><stop offset="1" stop-color="{a1}" stop-opacity="0"/></linearGradient>'
+        f'<radialGradient id="disc"><stop offset="0" stop-color="{a1}" stop-opacity=".08"/><stop offset="1" stop-color="{a1}" stop-opacity="0"/></radialGradient>'
+    )
+    b.append(f'<circle cx="{rx}" cy="{ry}" r="{R}" fill="url(#disc)" stroke="{D["line2"]}"/>')
+    for r in (R / 3, 2 * R / 3):
+        b.append(f'<circle cx="{rx}" cy="{ry}" r="{r:.0f}" fill="none" stroke="{D["line"]}" stroke-dasharray="2 5"/>')
+    b.append(f'<path d="M{rx - R} {ry}H{rx + R}M{rx} {ry - R}V{ry + R}" stroke="{D["line"]}"/>')
+    b.append(f'<circle class="ring" cx="{rx}" cy="{ry}" r="{R}" fill="none" stroke="{a1}" stroke-width="1.2"/>')
+    ex, ey = rx + R * math.cos(a), ry + R * math.sin(a)
+    b.append(
+        f'<g class="sweep"><path d="M{rx} {ry}L{rx + R} {ry}A{R} {R} 0 0 0 {ex:.1f} {ey:.1f}Z" fill="url(#beam)"/>'
+        f'<path d="M{rx} {ry}H{rx + R}" stroke="{a1}" stroke-width="1.6" stroke-opacity=".8"/></g>'
+    )
+    blips = [("ML", 300, 72), ("XAI", 25, 92), ("RAG", 120, 64), ("UI/UX", 205, 96), ("DATA", 250, 40)]
+    for name, deg, dist in blips:
+        bx = rx + dist * math.cos(math.radians(deg))
+        by = ry + dist * math.sin(math.radians(deg))
+        delay = deg / 360 * T
+        lw = mono_w(name, 11)
+        tx = bx + 9 if bx < rx + 40 else bx - 9 - lw
+        b.append(
+            f'<g class="blip" style="animation-delay:{delay:.2f}s"><circle cx="{bx:.1f}" cy="{by:.1f}" r="9" fill="{a1}" fill-opacity=".18"/>'
+            f'<circle cx="{bx:.1f}" cy="{by:.1f}" r="3.4" fill="{a1}"/>{mono(tx, by + 4, name, 11, t1)}</g>'
+        )
+    b.append(f'<circle cx="{rx}" cy="{ry}" r="3.5" fill="{a1}"/>')
+    cap = "// skills.scan  ·  ultrasonic sweep"
+    b.append(mono(rx - mono_w(cap, 11.5) / 2, H - 22, cap, 11.5, t3))
+    label = (
+        "Terminal: whoami, Tariful Hoque, CSE graduate from East West University. Focus: machine learning, "
+        "explainable AI, grounded LLMs and UI/UX. Shipped: DocuSense RAG, AgriCycle, CareerPilot AI, EcoBin, Pulse. "
+        "Status: open to AI/ML roles. A radar sweeps across ML, XAI, RAG, UI/UX and data."
+    )
+    write("status.svg", svg(W, H, label, "".join(b), "".join(css), defs))
+
+
 # ================================================================ footer
 def footer():
     W, H = 1200, 250
@@ -989,4 +1163,7 @@ if __name__ == "__main__":
     projects()
     skills()
     experience()
+    wave_divider()
+    ticker()
+    status_card()
     footer()

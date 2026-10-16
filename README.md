@@ -8,7 +8,9 @@
   <a href="mailto:tarifulhoque347@gmail.com"><img src="assets/btn-email.svg" height="46" alt="Email me"></a>
 </p>
 
-<br>
+<img src="assets/ticker.svg" width="100%" alt="Stack: Machine Learning, Explainable AI, Python, FastAPI, RAG, FAISS, Claude API, Data Analysis, Data Visualization, JavaScript, PWA, Chart.js, Figma, UI/UX, Docker, GitHub Actions.">
+
+<img src="assets/divider-wave.svg" width="100%" alt="">
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/head-about-dark.svg">
@@ -24,6 +26,8 @@ My capstone predicted air quality from eight environmental parameters and used *
 > [!TIP]
 > **Open to AI/ML-focused roles**, data projects and research collaborations. Email is the quickest way to reach me.
 
+<img src="assets/status.svg" width="100%" alt="Terminal: whoami, Tariful Hoque, CSE graduate from East West University. Focus: machine learning, explainable AI, grounded LLMs and UI/UX. Shipped: DocuSense RAG, AgriCycle, CareerPilot AI, EcoBin, Pulse. Status: open to AI/ML roles.">
+
 <img src="assets/numbers.svg" width="100%" alt="By the numbers: 20K+ records in the capstone dataset, 8 input features, 5 classifiers compared, 3 live product prototypes.">
 
 <details>
@@ -37,7 +41,7 @@ My capstone predicted air quality from eight environmental parameters and used *
 
 </details>
 
-<br>
+<img src="assets/divider-wave.svg" width="100%" alt="">
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/head-featured-dark.svg">
@@ -58,7 +62,7 @@ My capstone predicted air quality from eight environmental parameters and used *
 
 <sub>Team of three · CSE400C capstone, East West University · Supervised by Dr. Tania Sultana · <a href="https://drive.google.com/drive/folders/10eSsJFSNciL62RBukbYIgn-VzT1FQ4fR">Report & project files ↗</a></sub>
 
-<br><br>
+<img src="assets/divider-wave.svg" width="100%" alt="">
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/head-work-dark.svg">
@@ -120,7 +124,7 @@ My capstone predicted air quality from eight environmental parameters and used *
   <a href="https://drive.google.com/drive/folders/1sht8pv4eu30iUAAp8_G1_nMwnoIfspnC"><b>Project files ↗</b></a>
 </p>
 
-<br>
+<img src="assets/divider-wave.svg" width="100%" alt="">
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/head-skills-dark.svg">
@@ -135,7 +139,7 @@ My capstone predicted air quality from eight environmental parameters and used *
 
 <sub>Every skill above is used in a project on this page or listed on my CV.</sub>
 
-<br><br>
+<img src="assets/divider-wave.svg" width="100%" alt="">
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/head-experience-dark.svg">
@@ -144,21 +148,8 @@ My capstone predicted air quality from eight environmental parameters and used *
 
 <img src="assets/experience.svg" width="100%" alt="2026, self-directed product builder: CareerPilot AI, EcoBin, Pulse and DocuSense RAG. 2025, capstone research at East West University (CSE400C). Two years each volunteering with the EWU Robotics, Science and Telecommunication clubs.">
 
-<details>
-<summary><b>Education</b></summary>
-<br>
 
-| Level | Qualification | Institution | Result |
-|---|---|---|---|
-| Undergraduate | B.Sc. in Computer Science and Engineering | East West University, Dhaka | CGPA 3.01 / 4.00 |
-| Higher Secondary | HSC | Abdul Kadir Mollah City College | GPA 5.00 / 5.00 |
-| Secondary | SSC | Ashuganj Tap Bidyut Kendra High School | GPA 5.00 / 5.00 |
-
-Languages: Bengali (native), English (professional working proficiency).
-
-</details>
-
-<br>
+<img src="assets/divider-wave.svg" width="100%" alt="">
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/head-activity-dark.svg">
@@ -172,7 +163,7 @@ Languages: Bengali (native), English (professional working proficiency).
 
 <sub>Redrawn every day from my contribution graph by a GitHub Actions workflow.</sub>
 
-<br><br>
+<img src="assets/divider-wave.svg" width="100%" alt="">
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/head-contact-dark.svg">
@@ -188,6 +179,8 @@ I'm open to AI/ML roles, data projects and research collaborations. Email is the
 </p>
 
 <br>
+
+<img src="assets/divider-wave.svg" width="100%" alt="">
 
 <img src="assets/footer.svg" width="100%" alt="Thanks for stopping by. © 2026 Tariful Hoque, Dhaka, Bangladesh.">
 

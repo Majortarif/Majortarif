@@ -812,7 +812,7 @@ def projects():
         "A mobile-first app for smallholder farmers in Bangladesh: sell without middlemen, earn from crop waste, get rewarded for green farming.",
         ["Farmer–buyer market, waste matcher, green rewards", "Bangla advisor with voice, offline PWA, 64 districts"],
         ["JavaScript", "PWA", "Chart.js", "Web Speech API"],
-        True, shot_media("agricycle", "github.com/Majortarif/AgriCycle", False, Path(__file__).parent / "shots" / "agricycle.webp"),
+        True, shot_media("agricycle", "greencycle-farm.netlify.app", True, Path(__file__).parent / "shots" / "agricycle.webp"),
         "AgriCycle: offline-first Bangla PWA for smallholder farmers with a farmer–buyer marketplace, crop-waste recycling matcher, green rewards and a Bangla farming advisor.",
     )
     project(

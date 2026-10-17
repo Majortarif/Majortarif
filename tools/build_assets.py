@@ -235,9 +235,9 @@ def hero():
     dust = "".join(dust)
     b.append(f'<g class="drift"><g>{dust}</g><g transform="translate(-{W} 0)">{dust}</g></g>')
 
-    # the eight model inputs as a softly linked network
+    # the seven model inputs as a softly linked network
     labelled = [
-        ("PM2.5", 790, 104), ("PM10", 948, 76), ("CO", 1098, 120), ("CO₂", 872, 200),
+        ("PM2.5", 790, 104), ("PM10", 948, 76), ("CO", 1098, 120),
         ("NO₂", 1030, 222), ("O₃", 1140, 292), ("Temp", 812, 304), ("Humidity", 970, 334),
     ]
     small = []
@@ -252,7 +252,7 @@ def hero():
     for i in range(len(pts)):
         for j in range(i + 1, len(pts)):
             d = math.dist(pts[i], pts[j])
-            if d < 128 or (i < 8 and j < 8 and d < 180):
+            if d < 128 or (i < len(labelled) and j < len(labelled) and d < 180):
                 (x1, y1), (x2, y2) = pts[i], pts[j]
                 net.append(
                     f'<path d="M{x1:.0f} {y1:.0f}L{x2:.0f} {y2:.0f}" stroke="#94aad2" stroke-opacity=".17"/>'
@@ -279,7 +279,7 @@ def hero():
     b.append(
         f'<g class="rise d6">{mono(768, 414, "// background.field", 12, D["acc"])}'
         f'<text class="sans" x="768" y="436" font-size="13.5" fill="{D["text3"]}">'
-        "Particles carry the 8 input features of my air-quality model.</text></g>"
+        "Particles carry the 7 input features of my air-quality model.</text></g>"
     )
 
     # status pill
@@ -308,7 +308,7 @@ def hero():
     )
 
     # role line
-    roles = ["Computer Science", "Machine Learning", "Explainable AI", "Data"]
+    roles = ["Computer Science", "Machine Learning", "Data Science", "UI/UX"]
     spans = []
     for k, r in enumerate(roles):
         if k:
@@ -321,10 +321,10 @@ def hero():
 
     # typing line (SMIL, so it runs in GitHub's <img>)
     phrases = [
-        "I build ML models that can explain their decisions",
-        "Explainable AI · data analysis · UI/UX design",
+        "I build ML models people can actually use",
+        "Machine learning · data science · UI/UX design",
         "Recently shipped: a grounded RAG service",
-        "From raw data to interpretable predictions",
+        "Live now: a real-time Dhaka air-quality app",
     ]
     fs, cw, x0, y = 17, 10.2, 92, 405
     t_type, t_del, hold, gap = 0.055, 0.022, 2.6, 0.5
@@ -364,7 +364,7 @@ def hero():
     b.append("</g>")
     b.append(f'<rect x=".5" y=".5" width="{W - 1}" height="{H - 1}" rx="22" fill="none" stroke="{D["line2"]}"/>')
     label = (
-        "Tariful Hoque. Computer Science graduate working on machine learning, Explainable AI and data. "
+        "Tariful Hoque. Computer Science graduate working on machine learning, data science and UI/UX. "
         "Open to AI/ML roles, Dhaka, Bangladesh."
     )
     write("hero.svg", svg(W, H, label, "".join(b), css, defs))
@@ -429,7 +429,7 @@ def heading(slug, index, label, lines, theme):
 def headings():
     heads = [
         ("about", "01", "About", [[("I care about what a model predicts, ", False), ("and why.", True)]]),
-        ("featured", "02", "Featured research", [[("Predicting air quality, ", False), ("and explaining why.", True)]]),
+        ("featured", "02", "Featured research", [[("Predicting air quality, ", False), ("live on the web.", True)]]),
         ("work", "03", "Selected work", [[("Things I have trained, designed ", False), ("and shipped.", True)]]),
         ("skills", "04", "Skills", [[("A toolkit backed by ", False), ("evidence.", True)]]),
         ("experience", "05", "Experience", [[("Research, product building ", False), ("and leadership.", True)]]),
@@ -486,9 +486,9 @@ def buttons():
 def numbers():
     W, H = 1200, 214
     stats = [
-        ("20", "K+", "records in the capstone", "air-quality dataset"),
-        ("8", "", "environmental input", "features modelled"),
-        ("5", "", "classifiers compared:", "RF, DT, LR, SVM, KNN"),
+        ("62", "K+", "sensor readings in the", "air-quality dataset"),
+        ("7", "", "sensor input", "features modelled"),
+        ("4", "", "models compared:", "RF, LightGBM, KNN, SVM"),
         ("3", "", "live product prototypes", "deployed"),
     ]
     cycle, Lh, fs = 12.0, 76, 66
@@ -533,7 +533,7 @@ def numbers():
         b.append("".join(g))
         b.append(f'<text class="sans" x="{px:.1f}" y="168" font-size="16" fill="{D["text2"]}">{esc(l1)}</text>')
         b.append(f'<text class="sans" x="{px:.1f}" y="190" font-size="16" fill="{D["text2"]}">{esc(l2)}</text>')
-    label = "By the numbers: 20K+ records in the capstone dataset, 8 input features, 5 classifiers compared, 3 live product prototypes."
+    label = "By the numbers: 62K+ sensor readings in the capstone dataset, 7 input features, 4 models compared, 3 live product prototypes."
     write("numbers.svg", svg(W, H, label, "".join(b), "".join(css), "".join(defs)))
 
 
@@ -541,15 +541,15 @@ def numbers():
 def pipeline():
     W, H = 1200, 480
     cycle = 5.2
-    inputs = ["PM2.5", "PM10", "CO", "CO₂", "NO₂", "O₃", "Temperature", "Humidity"]
-    models = ["Random Forest", "Decision Tree", "Logistic Regression", "SVM", "KNN"]
+    inputs = ["PM2.5", "PM10", "NO₂", "O₃", "CO", "Temperature", "Humidity"]
+    models = ["Random Forest", "LightGBM", "KNN", "SVM"]
     css = [
         ".base{fill:none;stroke:#94aad2;stroke-opacity:.2;stroke-width:1.2}",
         ".dash{fill:none;stroke:" + D["acc"] + ";stroke-opacity:.45;stroke-width:1.3;stroke-dasharray:3 9;animation:dash 1.1s linear infinite}",
         "@keyframes dash{to{stroke-dashoffset:-24}}",
         ".box{fill:" + D["elev2"] + ";stroke:rgba(148,170,210,.24)}",
     ]
-    # stage windows inside one cycle: inputs->prep, prep->models, models->xai, xai->insight
+    # stage windows inside one cycle: inputs->prep, prep->models, models->web app, web app->live AQI
     stages = [(0.00, 0.22), (0.24, 0.44), (0.46, 0.66), (0.68, 0.80)]
     for k, (s, e) in enumerate(stages):
         hit = e * 100
@@ -558,7 +558,7 @@ def pipeline():
             f"@keyframes glow{k}{{0%,{hit:.0f}%{{stroke:rgba(148,170,210,.24)}}{hit + 3:.0f}%{{stroke:{D['acc']};filter:drop-shadow(0 0 8px rgba(62,224,255,.6))}}{hit + 16:.0f}%,100%{{stroke:rgba(148,170,210,.24)}}}}"
         )
     b = [card(W, H)]
-    heads = [("INPUTS · 8", 48), ("PREP", 300), ("MODELS · 5", 584), ("EXPLAIN", 880), ("OUTPUT", 1048)]
+    heads = [("INPUTS · 7", 48), ("PREP", 300), ("MODELS · 4", 584), ("DEPLOY", 880), ("OUTPUT", 1048)]
     for t, x in heads:
         b.append(mono(x, 48, t, 12, D["text3"], cw=0.72))
     paths, pulses = [], []
@@ -576,16 +576,17 @@ def pipeline():
         )
 
     cy = 240
+    iy0 = cy - (len(inputs) * 44 - 12) / 2
     for i, t in enumerate(inputs):
-        y = 74 + i * 44
+        y = round(iy0 + i * 44)
         edge(f"i{i}", f"M200 {y + 16}C250 {y + 16} 250 {cy} 300 {cy}", 0, i * 0.008)
         b.append(f'<rect class="box" x="48" y="{y}" width="152" height="32" rx="9"/>')
         b.append(f'<circle cx="66" cy="{y + 16}" r="3" fill="{D["acc"]}" opacity=".8"/>')
         b.append(f'<text class="mono" x="80" y="{y + 21}" font-size="13.5" fill="{D["text2"]}">{esc(t)}</text>')
     b.append(f'<rect class="box glow0" x="300" y="{cy - 40}" width="184" height="80" rx="14"/>')
     b.append(f'<text class="sans" x="392" y="{cy - 4}" text-anchor="middle" font-size="19" font-weight="600" fill="{D["text"]}">Preprocess</text>')
-    b.append(f'<text class="mono" x="392" y="{cy + 20}" text-anchor="middle" font-size="12.5" fill="{D["text3"]}">+ feature engineering</text>')
-    my0 = cy - (5 * 40 + 4 * 16) / 2
+    b.append(f'<text class="mono" x="392" y="{cy + 20}" text-anchor="middle" font-size="12.5" fill="{D["text3"]}">+ US EPA AQI labels</text>')
+    my0 = cy - (len(models) * 40 + (len(models) - 1) * 16) / 2
     for j, t in enumerate(models):
         y = my0 + j * 56
         edge(f"m{j}", f"M484 {cy}C534 {cy} 534 {y + 20} 584 {y + 20}", 1, j * 0.01)
@@ -594,18 +595,18 @@ def pipeline():
         b.append(f'<text class="sans" x="604" y="{y + 26}" font-size="15.5" font-weight="500" fill="{D["text"]}">{esc(t)}</text>')
     edge("o0", f"M1004 {cy}H1048", 3)
     b.append(f'<rect class="box glow2" x="880" y="{cy - 40}" width="124" height="80" rx="14"/>')
-    b.append(f'<text class="sans" x="942" y="{cy - 2}" text-anchor="middle" font-size="22" font-weight="600" fill="{D["acc"]}">XAI</text>')
-    b.append(f'<text class="mono" x="942" y="{cy + 20}" text-anchor="middle" font-size="12.5" fill="{D["text3"]}">why?</text>')
+    b.append(f'<text class="sans" x="942" y="{cy - 2}" text-anchor="middle" font-size="20" font-weight="600" fill="{D["acc"]}">Web app</text>')
+    b.append(f'<text class="mono" x="942" y="{cy + 20}" text-anchor="middle" font-size="12.5" fill="{D["text3"]}">RF in browser</text>')
     b.append(f'<rect class="box glow3" x="1048" y="{cy - 40}" width="114" height="80" rx="14"/>')
-    b.append(f'<text class="sans" x="1105" y="{cy - 2}" text-anchor="middle" font-size="18" font-weight="600" fill="{D["text"]}">Insight</text>')
-    b.append(f'<text class="mono" x="1105" y="{cy + 20}" text-anchor="middle" font-size="12.5" fill="{D["text3"]}">for people</text>')
-    cap = "// capstone.pipeline   20,000+ records · 8 features · 5 classifiers · feature-level impact via XAI"
+    b.append(f'<text class="sans" x="1105" y="{cy - 2}" text-anchor="middle" font-size="18" font-weight="600" fill="{D["text"]}">Live AQI</text>')
+    b.append(f'<text class="mono" x="1105" y="{cy + 20}" text-anchor="middle" font-size="12.5" fill="{D["text3"]}">+ alerts</text>')
+    cap = "// capstone.pipeline   62,188 readings · 7 features · 4 models · Random Forest runs live in the browser"
     b.append(mono(48, H - 30, cap, 12, D["text3"]))
     body = b[0] + "".join(paths) + "".join(b[1:]) + f'<g class="smil">{"".join(pulses)}</g>'
     label = (
-        "Capstone pipeline: 8 inputs (PM2.5, PM10, CO, CO2, NO2, O3, temperature, humidity) go through "
-        "preprocessing and feature engineering into 5 classifiers (Random Forest, Decision Tree, Logistic "
-        "Regression, SVM, KNN), then Explainable AI turns predictions into insight."
+        "Capstone pipeline: 7 sensor inputs (PM2.5, PM10, NO2, O3, CO, temperature, humidity) are cleaned "
+        "and labelled with the US EPA AQI, 4 models are compared (Random Forest, LightGBM, KNN, SVM), and the "
+        "Random Forest runs in a web app that shows live AQI and alerts."
     )
     write("featured-pipeline.svg", svg(W, H, label, body, "".join(css)))
 
@@ -859,7 +860,7 @@ def projects():
 
 # ================================================================ skills
 SKILLS = [
-    ("AI & Machine Learning", "modelling and interpretation", ["Machine Learning", "Explainable AI (XAI)", "Random Forest", "Decision Tree", "Logistic Regression", "SVM", "KNN", "Feature engineering", "Model evaluation"]),
+    ("AI & Machine Learning", "modelling and evaluation", ["Machine Learning", "LightGBM", "Random Forest", "Decision Tree", "Logistic Regression", "SVM", "KNN", "Feature engineering", "Model evaluation"]),
     ("Applied AI & LLMs", "grounded answers, not guesses", ["RAG", "Vector search (FAISS)", "Embeddings", "Claude API", "Structured output", "Prompt-injection guardrails", "Rule-based logic"]),
     ("Data", "analysis and visualization", ["Data analysis", "Data visualization", "Data preprocessing", "SQL", "MS Excel", "Chart.js"]),
     ("Programming & Web", "building working software", ["Python", "FastAPI", "pytest", "JavaScript (ES6+)", "HTML5 & CSS3", "Tailwind CSS", "C", "Responsive, accessible UI"]),
@@ -914,8 +915,8 @@ def experience():
          "Designed and shipped browser-based product prototypes and a grounded RAG service end to end, from problem framing and UI to deployment.",
          ["CareerPilot AI · EcoBin · Pulse", "DocuSense RAG (FastAPI, FAISS, Claude)"]),
         ("2025", "Academic research", "Capstone research", "East West University · CSE400C",
-         "Three-person capstone on air-quality prediction, supervised by Dr. Tania Sultana. Data preparation, model training, evaluation and XAI.",
-         ["8 environmental parameters", "Plain-language insight on what drives air quality"]),
+         "Three-person capstone on air-quality prediction, supervised by Dr. Tania Sultana. Data preparation, model training and a live AQI app.",
+         ["7 sensor features · 62K+ readings", "Live app with an in-browser Random Forest"]),
         ("2 yrs each", "Volunteering", "Club volunteer", "Three campus clubs",
          "Organising technical events, supporting workshops and managing communication-based outreach.",
          ["EWU Robotics Club", "Science Club · Telecommunication Club"]),
@@ -989,7 +990,7 @@ def wave_divider():
     write("divider-wave.svg", svg(W, H, "Animated ultrasonic wave divider", f'<g mask="url(#m)">{"".join(b)}</g>', "".join(css), defs))
 
 
-TICKER = ["Machine Learning", "Explainable AI", "Python", "FastAPI", "RAG", "FAISS", "Claude API",
+TICKER = ["Machine Learning", "scikit-learn", "Python", "FastAPI", "RAG", "FAISS", "Claude API",
           "Data Analysis", "Data Visualization", "JavaScript", "PWA", "Chart.js", "Figma", "UI/UX", "Docker", "GitHub Actions"]
 
 
@@ -1046,9 +1047,9 @@ def status_card():
         prompt("whoami"),
         [("  Tariful Hoque  ·  CSE graduate, East West University", t2)],
         prompt("cat focus.txt"),
-        [("  machine learning · explainable AI · grounded LLMs · UI/UX", t2)],
+        [("  machine learning · data science · grounded LLMs · UI/UX", t2)],
         prompt("ls ~/shipped"),
-        [("  docusense-rag/  agricycle/  careerpilot-ai/  ecobin/  pulse/", a1)],
+        [("  docusense-rag/  air-quality/  agricycle/  careerpilot-ai/  ecobin/  pulse/", a1)],
         prompt("./status --live"),
         [("  ● open to AI/ML roles    ● building in public    ● UTC+6", ok)],
     ]
@@ -1083,7 +1084,7 @@ def status_card():
         f'<g class="sweep"><path d="M{rx} {ry}L{rx + R} {ry}A{R} {R} 0 0 0 {ex:.1f} {ey:.1f}Z" fill="url(#beam)"/>'
         f'<path d="M{rx} {ry}H{rx + R}" stroke="{a1}" stroke-width="1.6" stroke-opacity=".8"/></g>'
     )
-    blips = [("ML", 300, 72), ("XAI", 25, 92), ("RAG", 120, 64), ("UI/UX", 205, 96), ("DATA", 250, 40)]
+    blips = [("ML", 300, 72), ("IOT", 25, 92), ("RAG", 120, 64), ("UI/UX", 205, 96), ("DATA", 250, 40)]
     for name, deg, dist in blips:
         bx = rx + dist * math.cos(math.radians(deg))
         by = ry + dist * math.sin(math.radians(deg))
@@ -1099,8 +1100,8 @@ def status_card():
     b.append(mono(rx - mono_w(cap, 11.5) / 2, H - 22, cap, 11.5, t3))
     label = (
         "Terminal: whoami, Tariful Hoque, CSE graduate from East West University. Focus: machine learning, "
-        "explainable AI, grounded LLMs and UI/UX. Shipped: DocuSense RAG, AgriCycle, CareerPilot AI, EcoBin, Pulse. "
-        "Status: open to AI/ML roles. A radar sweeps across ML, XAI, RAG, UI/UX and data."
+        "data science, grounded LLMs and UI/UX. Shipped: DocuSense RAG, Air Quality app, AgriCycle, CareerPilot AI, "
+        "EcoBin, Pulse. Status: open to AI/ML roles. A radar sweeps across ML, IoT, RAG, UI/UX and data."
     )
     write("status.svg", svg(W, H, label, "".join(b), "".join(css), defs))
 
@@ -1142,7 +1143,7 @@ def footer():
         f'letter-spacing="-1" fill="{D["text"]}" xml:space="preserve">Thanks for <tspan class="serif" font-size="46" '
         f'font-weight="400" fill="url(#em)">stopping by.</tspan></text>'
     )
-    line = "Machine Learning  ·  Explainable AI  ·  Data  ·  UI/UX"
+    line = "Machine Learning  ·  Data Science  ·  IoT  ·  UI/UX"
     b.append(mono(600 - mono_w(line, 13) / 2, 134, line, 13, D["text3"]))
     cr = "© 2026 Tariful Hoque  ·  Dhaka, Bangladesh"
     b.append(mono(600 - mono_w(cr, 12) / 2, 228, cr, 12, D["text2"]))

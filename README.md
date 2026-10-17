@@ -1,5 +1,5 @@
 <a href="https://tarifulhoqueportfoloi.netlify.app/">
-  <img src="assets/hero.svg" width="100%" alt="Tariful Hoque. Computer Science graduate working on machine learning, Explainable AI and data. Open to AI/ML roles, Dhaka, Bangladesh.">
+  <img src="assets/hero.svg" width="100%" alt="Tariful Hoque. Computer Science graduate working on machine learning, data science and UI/UX. Open to AI/ML roles, Dhaka, Bangladesh.">
 </a>
 
 <p align="center">
@@ -8,7 +8,7 @@
   <a href="mailto:tarifulhoque347@gmail.com"><img src="assets/btn-email.svg" height="46" alt="Email me"></a>
 </p>
 
-<img src="assets/ticker.svg" width="100%" alt="Stack: Machine Learning, Explainable AI, Python, FastAPI, RAG, FAISS, Claude API, Data Analysis, Data Visualization, JavaScript, PWA, Chart.js, Figma, UI/UX, Docker, GitHub Actions.">
+<img src="assets/ticker.svg" width="100%" alt="Stack: Machine Learning, scikit-learn, Python, FastAPI, RAG, FAISS, Claude API, Data Analysis, Data Visualization, JavaScript, PWA, Chart.js, Figma, UI/UX, Docker, GitHub Actions.">
 
 <img src="assets/divider-wave.svg" width="100%" alt="">
 
@@ -19,22 +19,22 @@
 
 I studied Computer Science and Engineering at **East West University**, Dhaka. My work sits where **machine learning, data and design** meet: I like taking a problem from its definition and the data behind it, through model building, to a result someone can actually use.
 
-My capstone predicted air quality from eight environmental parameters and used **Explainable AI** to show which pollutants drive the outcome. Alongside ML, I design interfaces in Figma, build browser-based product prototypes, and most recently built a grounded RAG service that refuses to guess.
+My capstone predicts Dhaka's air quality from seven IoT sensor readings with a **Random Forest**, and it now runs as a [live web app](https://airqualitypredictionapp.netlify.app/). Alongside ML, I design interfaces in Figma, build browser-based product prototypes, and most recently built a grounded RAG service that refuses to guess.
 
-**How I work** &nbsp;`Define` → `Understand the data` → `Model` → `Explain` → `Deliver`
+**How I work** &nbsp;`Define` → `Understand the data` → `Model` → `Evaluate` → `Deliver`
 
 > [!TIP]
 > **Open to AI/ML-focused roles**, data projects and research collaborations. Email is the quickest way to reach me.
 
-<img src="assets/status.svg" width="100%" alt="Terminal: whoami, Tariful Hoque, CSE graduate from East West University. Focus: machine learning, explainable AI, grounded LLMs and UI/UX. Shipped: DocuSense RAG, AgriCycle, CareerPilot AI, EcoBin, Pulse. Status: open to AI/ML roles.">
+<img src="assets/status.svg" width="100%" alt="Terminal: whoami, Tariful Hoque, CSE graduate from East West University. Focus: machine learning, data science, grounded LLMs and UI/UX. Shipped: DocuSense RAG, Air Quality app, AgriCycle, CareerPilot AI, EcoBin, Pulse. Status: open to AI/ML roles.">
 
-<img src="assets/numbers.svg" width="100%" alt="By the numbers: 20K+ records in the capstone dataset, 8 input features, 5 classifiers compared, 3 live product prototypes.">
+<img src="assets/numbers.svg" width="100%" alt="By the numbers: 62K+ sensor readings in the capstone dataset, 7 input features, 4 models compared, 3 live product prototypes.">
 
 <details>
 <summary><b>Currently exploring</b></summary>
 <br>
 
-- Explainable AI techniques for interpreting model predictions
+- Real-time machine learning on low-cost IoT sensor data
 - End-to-end machine learning workflows, from data understanding to evaluation
 - Grounded LLM answers: retrieval, citations and knowing when to say "I don't know"
 - Data analysis and visualization
@@ -45,22 +45,37 @@ My capstone predicted air quality from eight environmental parameters and used *
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/head-featured-dark.svg">
-  <img src="assets/head-featured-light.svg" width="100%" alt="02 · Featured research: Predicting air quality, and explaining why.">
+  <img src="assets/head-featured-light.svg" width="100%" alt="02 · Featured research: Predicting air quality, live on the web.">
 </picture>
 
-### Air Quality Prediction using Machine Learning & Explainable AI
+### [Air Quality Prediction using Machine Learning and AI](https://github.com/Majortarif/Air-Quality-Prediction-using-Machine-Learning-and-AI)
 
-<img src="assets/featured-pipeline.svg" width="100%" alt="Capstone pipeline: 8 inputs (PM2.5, PM10, CO, CO2, NO2, O3, temperature, humidity) go through preprocessing and feature engineering into 5 classifiers (Random Forest, Decision Tree, Logistic Regression, SVM, KNN), then Explainable AI turns predictions into insight.">
+<p align="center">
+  <a href="https://airqualitypredictionapp.netlify.app/"><img src="https://img.shields.io/badge/Live_app-airqualitypredictionapp.netlify.app-00C7B7?style=for-the-badge&logo=netlify&logoColor=white" alt="Open the live app"></a>
+  <a href="https://github.com/Majortarif/Air-Quality-Prediction-using-Machine-Learning-and-AI"><img src="https://img.shields.io/badge/Source-GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="Source code on GitHub"></a>
+</p>
+
+<img src="assets/featured-pipeline.svg" width="100%" alt="Capstone pipeline: 7 sensor inputs (PM2.5, PM10, NO2, O3, CO, temperature, humidity) are cleaned and labelled with the US EPA AQI, 4 models are compared (Random Forest, LightGBM, KNN, SVM), and the Random Forest runs in a web app that shows live AQI and alerts.">
 
 | | |
 |---|---|
 | **Problem** | Air pollution is a major public-health risk and Dhaka regularly ranks among the most polluted cities in the world, yet real-time systems that forecast air quality accurately remain sparse. |
-| **Data** | 20,000+ records from cities around the world: PM2.5, PM10, CO, CO₂, NO₂, O₃, temperature and humidity. |
-| **Approach** | Preprocessing and feature engineering, then five classifiers trained and compared: Random Forest, Decision Tree, Logistic Regression, SVM and KNN. |
-| **Explainability** | Explainable AI quantifies the feature-level impact of each pollutant, translated into plain-language insight on what drives air quality most. |
-| **Outcome** | The capstone reports that Random Forest and Decision Tree reached 100% classification accuracy on the project dataset. The proposed system feeds a web platform for monitoring and alerts. |
+| **Data** | 62,188 readings from our own low-cost IoT node in Badda and Aftabnagar, Dhaka: PM2.5, PM10, NO₂, O₃, CO, temperature and humidity (PMSA003, MQ-7, MQ-131, MEMS NO₂, DHT22). |
+| **Approach** | Cleaning and US EPA AQI labelling, then regression models trained and compared: Random Forest, LightGBM, KNN and SVM. |
+| **Outcome** | Random Forest reached **R² 0.9933 (RMSE 3.41)** on a time-ordered held-out test. PM2.5 drives almost all of the prediction. |
+| **Live app** | A real-time Dhaka dashboard: US EPA AQI gauge, the Random Forest running in the browser, 24-hour forecast, health advice and alerts, live Open-Meteo data, an ESP32 sensor mode and English/বাংলা. |
 
-<sub>Team of three · CSE400C capstone, East West University · Supervised by Dr. Tania Sultana · <a href="https://drive.google.com/drive/folders/10eSsJFSNciL62RBukbYIgn-VzT1FQ4fR">Report & project files ↗</a></sub>
+<a href="https://airqualitypredictionapp.netlify.app/">
+  <img src="https://raw.githubusercontent.com/Majortarif/Air-Quality-Prediction-using-Machine-Learning-and-AI/main/docs/screenshots/dashboard-dark.png" width="100%" alt="Live air quality dashboard: AQI gauge, Random Forest check and pollutant cards.">
+</a>
+
+<p align="center">
+  <a href="https://airqualitypredictionapp.netlify.app/"><b>Live demo ↗</b></a> &nbsp;·&nbsp;
+  <a href="https://github.com/Majortarif/Air-Quality-Prediction-using-Machine-Learning-and-AI"><b>Source ↗</b></a> &nbsp;·&nbsp;
+  <a href="https://drive.google.com/drive/folders/10eSsJFSNciL62RBukbYIgn-VzT1FQ4fR"><b>Report & project files ↗</b></a>
+</p>
+
+<sub>Team of three · CSE400C capstone, East West University · Supervised by Dr. Tania Sultana</sub>
 
 <img src="assets/divider-wave.svg" width="100%" alt="">
 

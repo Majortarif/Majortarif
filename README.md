@@ -1,9 +1,9 @@
-<a href="https://myupdatedportfoloiwebsite.netlify.app/">
+<a href="https://mylatestportfoloiwebsite.netlify.app/">
   <img src="assets/hero.svg" width="100%" alt="Tariful Hoque. Computer Science graduate working on machine learning, data science and UI/UX. Open to AI/ML roles, Dhaka, Bangladesh.">
 </a>
 
 <p align="center">
-  <a href="https://myupdatedportfoloiwebsite.netlify.app/"><img src="assets/btn-portfolio.svg" height="46" alt="Visit portfolio"></a>&nbsp;
+  <a href="https://mylatestportfoloiwebsite.netlify.app/"><img src="assets/btn-portfolio.svg" height="46" alt="Visit portfolio"></a>&nbsp;
   <a href="https://www.linkedin.com/in/tariful-hoque-582321259/"><img src="assets/btn-linkedin.svg" height="46" alt="LinkedIn"></a>&nbsp;
   <a href="mailto:tarifulhoque347@gmail.com"><img src="assets/btn-email.svg" height="46" alt="Email me"></a>
 </p>
@@ -187,12 +187,12 @@ My capstone predicts Dhaka's air quality from seven IoT sensor readings with a *
 
 I'm open to AI/ML roles, data projects and research collaborations. Email is the quickest way to reach me: **[tarifulhoque347@gmail.com](mailto:tarifulhoque347@gmail.com)**
 
-Portfolio: **[myupdatedportfoloiwebsite.netlify.app](https://myupdatedportfoloiwebsite.netlify.app/)**
+Portfolio: **[mylatestportfoloiwebsite.netlify.app](https://mylatestportfoloiwebsite.netlify.app/)**
 
 <p>
   <a href="mailto:tarifulhoque347@gmail.com"><img src="assets/btn-email.svg" height="46" alt="Email me"></a>&nbsp;
   <a href="https://www.linkedin.com/in/tariful-hoque-582321259/"><img src="assets/btn-linkedin.svg" height="46" alt="LinkedIn"></a>&nbsp;
-  <a href="https://myupdatedportfoloiwebsite.netlify.app/"><img src="assets/btn-portfolio.svg" height="46" alt="Visit portfolio"></a>
+  <a href="https://mylatestportfoloiwebsite.netlify.app/"><img src="assets/btn-portfolio.svg" height="46" alt="Visit portfolio"></a>
 </p>
 
 <br>

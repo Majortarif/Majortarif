@@ -84,4 +84,4 @@ Mention relevant courses, instructors, datasets, teammates, papers, tools, or ot
 
 **Tariful Hoque**
 
-[Portfolio](https://mylatestportfoloiwebsite.netlify.app/) · [LinkedIn](https://www.linkedin.com/in/tariful-hoque-582321259)
+[Portfolio](https://updatedportfoloiwebsite.netlify.app/) · [LinkedIn](https://www.linkedin.com/in/tariful-hoque-582321259)

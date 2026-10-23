@@ -26,7 +26,7 @@ My capstone predicts Dhaka's air quality from seven IoT sensor readings with a *
 > [!TIP]
 > **Open to AI/ML-focused roles**, data projects and research collaborations. Email is the quickest way to reach me.
 
-<img src="assets/status.svg" width="100%" alt="Terminal: whoami, Tariful Hoque, CSE graduate from East West University. Focus: machine learning, data science, grounded LLMs and UI/UX. Shipped: DocuSense RAG, Air Quality app, AgriCycle, CareerPilot AI, EcoBin, Pulse. Status: open to AI/ML roles.">
+<img src="assets/status.svg" width="100%" alt="Terminal: whoami, Tariful Hoque, CSE graduate from East West University. Focus: machine learning, data science, grounded LLMs and UI/UX. Shipped: MessMate BD, DocuSense RAG, Air Quality app, AgriCycle, CareerPilot AI, EcoBin, Pulse. Status: open to AI/ML roles.">
 
 <img src="assets/numbers.svg" width="100%" alt="By the numbers: 62K+ sensor readings in the capstone dataset, 7 input features, 4 models compared, 3 live product prototypes.">
 
@@ -83,6 +83,15 @@ My capstone predicts Dhaka's air quality from seven IoT sensor readings with a *
   <source media="(prefers-color-scheme: dark)" srcset="assets/head-work-dark.svg">
   <img src="assets/head-work-light.svg" width="100%" alt="03 · Selected work: Things I have trained, designed and shipped.">
 </picture>
+
+<a href="https://messmate-bd.netlify.app/">
+  <img src="assets/project-messmate.svg" width="100%" alt="MessMate BD: live multi-tenant Next.js and Supabase app for bachelor messes in Dhaka with meals, a ledger-based wallet, bill splits, housing, roommates and Care, isolated per mess by Row Level Security.">
+</a>
+<p align="center">
+  <a href="https://messmate-bd.netlify.app/"><b>Live app ↗</b></a> &nbsp;·&nbsp;
+  <a href="https://github.com/Majortarif/messmate-bd"><b>Source ↗</b></a> &nbsp;·&nbsp;
+  <a href="https://github.com/Majortarif/messmate-bd/actions/workflows/ci.yml"><img src="https://github.com/Majortarif/messmate-bd/actions/workflows/ci.yml/badge.svg" alt="CI status" align="center"></a>
+</p>
 
 <a href="https://github.com/Majortarif/docusense-rag">
   <img src="assets/project-docusense.svg" width="100%" alt="DocuSense RAG: a FastAPI service that answers only from internal documentation (FAISS retrieval, Claude or extractive answers, guardrails, 106 tests, Docker CI).">
@@ -161,7 +170,7 @@ My capstone predicts Dhaka's air quality from seven IoT sensor readings with a *
   <img src="assets/head-experience-light.svg" width="100%" alt="05 · Experience: Research, product building and leadership.">
 </picture>
 
-<img src="assets/experience.svg" width="100%" alt="2026, self-directed product builder: CareerPilot AI, EcoBin, Pulse and DocuSense RAG. 2025, capstone research at East West University (CSE400C). Two years each volunteering with the EWU Robotics, Science and Telecommunication clubs.">
+<img src="assets/experience.svg" width="100%" alt="2026, self-directed product builder: MessMate BD (a live Next.js and Supabase app), DocuSense RAG, CareerPilot AI and Pulse. 2025, capstone research at East West University (CSE400C). Two years each volunteering with the EWU Robotics, Science and Telecommunication clubs.">
 
 
 <img src="assets/divider-wave.svg" width="100%" alt="">

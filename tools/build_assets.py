@@ -801,59 +801,67 @@ def ads_media(x, y, w, h):
 
 def projects():
     project(
-        "docusense", "01", "Applied AI · Grounded RAG service · 2026", "DocuSense RAG",
+        "messmate", "01", "Full-stack · Next.js + Supabase · live", "MessMate BD",
+        "A live, multi-tenant app for bachelor messes in Dhaka: meals, a prepaid wallet, bill splits, housing, roommates and a Care toolkit.",
+        ["Row Level Security isolates every mess, 279 SQL checks", "Append-only money ledger, Google + email login"],
+        ["Next.js", "TypeScript", "Supabase", "PostgreSQL", "PWA"],
+        False, shot_media("messmate", "messmate-bd.netlify.app", True, Path(__file__).parent / "shots" / "messmate.webp"),
+        "MessMate BD: live multi-tenant Next.js and Supabase app for bachelor messes in Dhaka with meals, a ledger-based wallet, bill splits, housing, roommates and Care, isolated per mess by Row Level Security.",
+    )
+    project(
+        "docusense", "02", "Applied AI · Grounded RAG service · 2026", "DocuSense RAG",
         "A FastAPI microservice that answers questions only from internal documentation, and returns one fixed fallback sentence when the answer is not there.",
         ["Injection screen, similarity gate and citation checks", "106 tests, golden-set evaluation, Docker CI"],
         ["Python", "FastAPI", "FAISS", "Claude API", "Docker"],
-        False, docusense_media,
+        True, docusense_media,
         "DocuSense RAG: a FastAPI service that answers only from internal documentation (FAISS retrieval, Claude or extractive answers, guardrails, 106 tests, Docker CI).",
     )
     project(
-        "agricycle", "02", "AgriTech · Offline Bangla PWA · CSE495", "AgriCycle",
+        "agricycle", "03", "AgriTech · Offline Bangla PWA · CSE495", "AgriCycle",
         "A mobile-first app for smallholder farmers in Bangladesh: sell without middlemen, earn from crop waste, get rewarded for green farming.",
         ["Farmer–buyer market, waste matcher, green rewards", "Bangla advisor with voice, offline PWA, 64 districts"],
         ["JavaScript", "PWA", "Chart.js", "Web Speech API"],
-        True, shot_media("agricycle", "greencycle-farm.netlify.app", True, Path(__file__).parent / "shots" / "agricycle.webp"),
+        False, shot_media("agricycle", "greencycle-farm.netlify.app", True, Path(__file__).parent / "shots" / "agricycle.webp"),
         "AgriCycle: offline-first Bangla PWA for smallholder farmers with a farmer–buyer marketplace, crop-waste recycling matcher, green rewards and a Bangla farming advisor.",
     )
     project(
-        "careerpilot", "03", "Career intelligence · Frontend prototype · 2026", "CareerPilot AI",
+        "careerpilot", "04", "Career intelligence · Frontend prototype · 2026", "CareerPilot AI",
         "A career and skill workspace: analyse a CV and job descriptions, see skill gaps, follow a 12-week roadmap and track applications.",
         ["Required vs. preferred skill detection, gap scoring", "Rule-based AI, deterministic and labelled as simulated"],
         ["JavaScript", "Tailwind CSS", "Chart.js", "LocalStorage"],
-        False, shot_media("careerpilot", "majortarif.github.io/CareerPilot-AI", True),
+        True, shot_media("careerpilot", "majortarif.github.io/CareerPilot-AI", True),
         "CareerPilot AI: career and skill intelligence prototype with CV and job analysis, skill gaps, a 12-week roadmap and an application tracker.",
     )
     project(
-        "ecobin", "04", "Smart waste management · Concept + dashboard", "EcoBin 2.0",
+        "ecobin", "05", "Smart waste management · Concept + dashboard", "EcoBin 2.0",
         "An AI-powered smart waste bin concept I led from problem definition to prototype, with an operations dashboard for bins and routes.",
         ["48 simulated bins: fill level, battery, waste type", "Collection routes with a rule-based route optimizer"],
         ["Product design", "JavaScript", "Tailwind CSS", "Cloudflare"],
-        True, shot_media("ecobin", "icy-leaf-c41a.tariful-ewu.workers.dev", True),
+        False, shot_media("ecobin", "icy-leaf-c41a.tariful-ewu.workers.dev", True),
         "EcoBin 2.0: smart waste bin concept and operations dashboard with 48 simulated bins, waste analytics and route optimization.",
     )
     project(
-        "pulse", "05", "Productivity · Task & habit tracker · 2026", "Pulse",
+        "pulse", "06", "Productivity · Task & habit tracker · 2026", "Pulse",
         "An AI-assisted task and habit tracker: organise tasks, build streaks, read your own analytics and ask a coach what to do next.",
         ["Habit streaks calculated from real completion dates", "Rule-based AI Coach that answers from your own data"],
         ["JavaScript", "Tailwind CSS", "LocalStorage", "Netlify"],
-        False, shot_media("pulse", "ai-task-habit-tracker.netlify.app", True),
+        True, shot_media("pulse", "ai-task-habit-tracker.netlify.app", True),
         "Pulse: task and habit tracker with streaks, productivity analytics and a rule-based AI coach.",
     )
     project(
-        "phonebook", "06", "C · Console application · 2022 → 2026", "Digital Phonebook",
+        "phonebook", "07", "C · Console application · 2022 → 2026", "Digital Phonebook",
         "My 2022 C console project, rebuilt in 2026 with proper fixes and a colourised UI.",
         ["CRUD, search across six fields, blocking, favourites", "Statistics and export to a readable text file"],
         ["C", "File I/O", "Code::Blocks", "MinGW GCC"],
-        True, phonebook_media,
+        False, phonebook_media,
         "Digital Phonebook 2026: C console app with contact CRUD, search, blocking, favourites, statistics and export.",
     )
     project(
-        "ai-ads", "07", "Generative AI · Digital marketing", "AI-Powered Short Ads",
+        "ai-ads", "08", "Generative AI · Digital marketing", "AI-Powered Short Ads",
         "Short-form promotional ads and creative ad concepts made with AI-based generative content tools.",
         ["How AI-assisted workflows make advertising faster", "From creative concept to finished short-form ad"],
         ["Generative AI", "Advertising", "Creative content"],
-        False, ads_media,
+        True, ads_media,
         "AI-Powered Short Advertisement Creation: creative ad concepts turned into short-form promotional ads with generative AI tools.",
     )
 
@@ -862,10 +870,10 @@ def projects():
 SKILLS = [
     ("AI & Machine Learning", "modelling and evaluation", ["Machine Learning", "LightGBM", "Random Forest", "Decision Tree", "Logistic Regression", "SVM", "KNN", "Feature engineering", "Model evaluation"]),
     ("Applied AI & LLMs", "grounded answers, not guesses", ["RAG", "Vector search (FAISS)", "Embeddings", "Claude API", "Structured output", "Prompt-injection guardrails", "Rule-based logic"]),
-    ("Data", "analysis and visualization", ["Data analysis", "Data visualization", "Data preprocessing", "SQL", "MS Excel", "Chart.js"]),
-    ("Programming & Web", "building working software", ["Python", "FastAPI", "pytest", "JavaScript (ES6+)", "HTML5 & CSS3", "Tailwind CSS", "C", "Responsive, accessible UI"]),
+    ("Data", "analysis and visualization", ["Data analysis", "Data visualization", "Data preprocessing", "SQL", "PostgreSQL", "MS Excel", "Chart.js"]),
+    ("Programming & Web", "building working software", ["Python", "FastAPI", "pytest", "Next.js", "TypeScript", "JavaScript (ES6+)", "HTML5 & CSS3", "Tailwind CSS", "C", "Responsive, accessible UI"]),
     ("Design & Product", "from idea to interface", ["UI/UX design", "Figma", "Product prototyping", "AI-assisted content", "Ad & campaign concepts", "Digital communication"]),
-    ("Tools & Delivery", "shipping and version control", ["Git & GitHub", "GitHub Actions", "Docker", "GitHub Pages", "Netlify", "Cloudflare", "Code::Blocks"]),
+    ("Tools & Delivery", "shipping and version control", ["Git & GitHub", "GitHub Actions", "Docker", "Supabase", "GitHub Pages", "Netlify", "Cloudflare", "Code::Blocks"]),
 ]
 
 
@@ -912,8 +920,8 @@ def experience():
     W, H = 1200, 396
     cols = [
         ("2026", "Self-directed", "Product builder", "Independent projects",
-         "Designed and shipped browser-based product prototypes and a grounded RAG service end to end, from problem framing and UI to deployment.",
-         ["CareerPilot AI · EcoBin · Pulse", "DocuSense RAG (FastAPI, FAISS, Claude)"]),
+         "Designed and shipped a live full-stack app, product prototypes and a grounded RAG service end to end, from problem framing to deployment.",
+         ["MessMate BD (Next.js, Supabase, live)", "DocuSense RAG · CareerPilot AI · Pulse"]),
         ("2025", "Academic research", "Capstone research", "East West University · CSE400C",
          "Three-person capstone on air-quality prediction, supervised by Dr. Tania Sultana. Data preparation, model training and a live AQI app.",
          ["7 sensor features · 62K+ readings", "Live app with an in-browser Random Forest"]),
@@ -991,7 +999,7 @@ def wave_divider():
 
 
 TICKER = ["Machine Learning", "scikit-learn", "Python", "FastAPI", "RAG", "FAISS", "Claude API",
-          "Data Analysis", "Data Visualization", "JavaScript", "PWA", "Chart.js", "Figma", "UI/UX", "Docker", "GitHub Actions"]
+          "Data Analysis", "Data Visualization", "Next.js", "TypeScript", "Supabase", "PostgreSQL", "JavaScript", "PWA", "Chart.js", "Figma", "UI/UX", "Docker", "GitHub Actions"]
 
 
 def ticker():
@@ -1049,7 +1057,7 @@ def status_card():
         prompt("cat focus.txt"),
         [("  machine learning · data science · grounded LLMs · UI/UX", t2)],
         prompt("ls ~/shipped"),
-        [("  docusense-rag/  air-quality/  agricycle/  careerpilot-ai/  ecobin/  pulse/", a1)],
+        [("  messmate-bd/  docusense-rag/  air-quality/  agricycle/  careerpilot-ai/  +2", a1)],
         prompt("./status --live"),
         [("  ● open to AI/ML roles    ● building in public    ● UTC+6", ok)],
     ]
@@ -1100,8 +1108,8 @@ def status_card():
     b.append(mono(rx - mono_w(cap, 11.5) / 2, H - 22, cap, 11.5, t3))
     label = (
         "Terminal: whoami, Tariful Hoque, CSE graduate from East West University. Focus: machine learning, "
-        "data science, grounded LLMs and UI/UX. Shipped: DocuSense RAG, Air Quality app, AgriCycle, CareerPilot AI, "
-        "EcoBin, Pulse. Status: open to AI/ML roles. A radar sweeps across ML, IoT, RAG, UI/UX and data."
+        "data science, grounded LLMs and UI/UX. Shipped: MessMate BD, DocuSense RAG, Air Quality app, AgriCycle, "
+        "CareerPilot AI, EcoBin, Pulse. Status: open to AI/ML roles. A radar sweeps across ML, IoT, RAG, UI/UX and data."
     )
     write("status.svg", svg(W, H, label, "".join(b), "".join(css), defs))
 

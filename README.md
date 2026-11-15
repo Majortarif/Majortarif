@@ -93,6 +93,15 @@ My capstone predicts Dhaka's air quality from seven IoT sensor readings with a *
   <a href="https://github.com/Majortarif/messmate-bd/actions/workflows/ci.yml"><img src="https://github.com/Majortarif/messmate-bd/actions/workflows/ci.yml/badge.svg" alt="CI status" align="center"></a>
 </p>
 
+<a href="https://beporowa.netlify.app/">
+  <img src="assets/project-beporowa.svg" width="100%" alt="Beporowa: a live Bangla-first open-world street racer for the browser, built with TypeScript, Three.js and Rapier physics, with police chases, monsoon floods, ghosts, daily challenges and online leaderboards.">
+</a>
+<p align="center">
+  <a href="https://beporowa.netlify.app/"><b>Play now ↗</b></a> &nbsp;·&nbsp;
+  <a href="https://github.com/Majortarif/beporowa"><b>Source ↗</b></a> &nbsp;·&nbsp;
+  <a href="https://github.com/LCTarif/beporowa/releases/tag/v0.7.0"><b>Release v0.7.0 ↗</b></a>
+</p>
+
 <a href="https://github.com/Majortarif/docusense-rag">
   <img src="assets/project-docusense.svg" width="100%" alt="DocuSense RAG: a FastAPI service that answers only from internal documentation (FAISS retrieval, Claude or extractive answers, guardrails, 106 tests, Docker CI).">
 </a>

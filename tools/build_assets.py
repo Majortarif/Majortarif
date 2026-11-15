@@ -809,59 +809,67 @@ def projects():
         "MessMate BD: live multi-tenant Next.js and Supabase app for bachelor messes in Dhaka with meals, a ledger-based wallet, bill splits, housing, roommates and Care, isolated per mess by Row Level Security.",
     )
     project(
-        "docusense", "02", "Applied AI · Grounded RAG service · 2026", "DocuSense RAG",
+        "beporowa", "02", "Game dev · Three.js + Rapier · live", "Beporowa",
+        "A Bangla-first open-world street racer for the browser: a Dhaka-inspired city, police chases, a ten-rival league and monsoon floods.",
+        ["Fixed 60 Hz Rapier physics, 279 automated tests", "Ghosts, daily challenges and live leaderboards"],
+        ["TypeScript", "Three.js", "WebGL2", "Rapier", "Netlify"],
+        True, shot_media("beporowa", "beporowa.netlify.app", True, Path(__file__).parent / "shots" / "beporowa.webp"),
+        "Beporowa: a live Bangla-first open-world street racer for the browser, built with TypeScript, Three.js and Rapier physics, with police chases, monsoon floods, ghosts, daily challenges and online leaderboards.",
+    )
+    project(
+        "docusense", "03", "Applied AI · Grounded RAG service · 2026", "DocuSense RAG",
         "A FastAPI microservice that answers questions only from internal documentation, and returns one fixed fallback sentence when the answer is not there.",
         ["Injection screen, similarity gate and citation checks", "106 tests, golden-set evaluation, Docker CI"],
         ["Python", "FastAPI", "FAISS", "Claude API", "Docker"],
-        True, docusense_media,
+        False, docusense_media,
         "DocuSense RAG: a FastAPI service that answers only from internal documentation (FAISS retrieval, Claude or extractive answers, guardrails, 106 tests, Docker CI).",
     )
     project(
-        "agricycle", "03", "AgriTech · Offline Bangla PWA · CSE495", "AgriCycle",
+        "agricycle", "04", "AgriTech · Offline Bangla PWA · CSE495", "AgriCycle",
         "A mobile-first app for smallholder farmers in Bangladesh: sell without middlemen, earn from crop waste, get rewarded for green farming.",
         ["Farmer–buyer market, waste matcher, green rewards", "Bangla advisor with voice, offline PWA, 64 districts"],
         ["JavaScript", "PWA", "Chart.js", "Web Speech API"],
-        False, shot_media("agricycle", "greencycle-farm.netlify.app", True, Path(__file__).parent / "shots" / "agricycle.webp"),
+        True, shot_media("agricycle", "greencycle-farm.netlify.app", True, Path(__file__).parent / "shots" / "agricycle.webp"),
         "AgriCycle: offline-first Bangla PWA for smallholder farmers with a farmer–buyer marketplace, crop-waste recycling matcher, green rewards and a Bangla farming advisor.",
     )
     project(
-        "careerpilot", "04", "Career intelligence · Frontend prototype · 2026", "CareerPilot AI",
+        "careerpilot", "05", "Career intelligence · Frontend prototype · 2026", "CareerPilot AI",
         "A career and skill workspace: analyse a CV and job descriptions, see skill gaps, follow a 12-week roadmap and track applications.",
         ["Required vs. preferred skill detection, gap scoring", "Rule-based AI, deterministic and labelled as simulated"],
         ["JavaScript", "Tailwind CSS", "Chart.js", "LocalStorage"],
-        True, shot_media("careerpilot", "majortarif.github.io/CareerPilot-AI", True),
+        False, shot_media("careerpilot", "majortarif.github.io/CareerPilot-AI", True),
         "CareerPilot AI: career and skill intelligence prototype with CV and job analysis, skill gaps, a 12-week roadmap and an application tracker.",
     )
     project(
-        "ecobin", "05", "Smart waste management · Concept + dashboard", "EcoBin 2.0",
+        "ecobin", "06", "Smart waste management · Concept + dashboard", "EcoBin 2.0",
         "An AI-powered smart waste bin concept I led from problem definition to prototype, with an operations dashboard for bins and routes.",
         ["48 simulated bins: fill level, battery, waste type", "Collection routes with a rule-based route optimizer"],
         ["Product design", "JavaScript", "Tailwind CSS", "Cloudflare"],
-        False, shot_media("ecobin", "icy-leaf-c41a.tariful-ewu.workers.dev", True),
+        True, shot_media("ecobin", "icy-leaf-c41a.tariful-ewu.workers.dev", True),
         "EcoBin 2.0: smart waste bin concept and operations dashboard with 48 simulated bins, waste analytics and route optimization.",
     )
     project(
-        "pulse", "06", "Productivity · Task & habit tracker · 2026", "Pulse",
+        "pulse", "07", "Productivity · Task & habit tracker · 2026", "Pulse",
         "An AI-assisted task and habit tracker: organise tasks, build streaks, read your own analytics and ask a coach what to do next.",
         ["Habit streaks calculated from real completion dates", "Rule-based AI Coach that answers from your own data"],
         ["JavaScript", "Tailwind CSS", "LocalStorage", "Netlify"],
-        True, shot_media("pulse", "ai-task-habit-tracker.netlify.app", True),
+        False, shot_media("pulse", "ai-task-habit-tracker.netlify.app", True),
         "Pulse: task and habit tracker with streaks, productivity analytics and a rule-based AI coach.",
     )
     project(
-        "phonebook", "07", "C · Console application · 2022 → 2026", "Digital Phonebook",
+        "phonebook", "08", "C · Console application · 2022 → 2026", "Digital Phonebook",
         "My 2022 C console project, rebuilt in 2026 with proper fixes and a colourised UI.",
         ["CRUD, search across six fields, blocking, favourites", "Statistics and export to a readable text file"],
         ["C", "File I/O", "Code::Blocks", "MinGW GCC"],
-        False, phonebook_media,
+        True, phonebook_media,
         "Digital Phonebook 2026: C console app with contact CRUD, search, blocking, favourites, statistics and export.",
     )
     project(
-        "ai-ads", "08", "Generative AI · Digital marketing", "AI-Powered Short Ads",
+        "ai-ads", "09", "Generative AI · Digital marketing", "AI-Powered Short Ads",
         "Short-form promotional ads and creative ad concepts made with AI-based generative content tools.",
         ["How AI-assisted workflows make advertising faster", "From creative concept to finished short-form ad"],
         ["Generative AI", "Advertising", "Creative content"],
-        True, ads_media,
+        False, ads_media,
         "AI-Powered Short Advertisement Creation: creative ad concepts turned into short-form promotional ads with generative AI tools.",
     )
 
